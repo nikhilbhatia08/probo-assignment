@@ -165,7 +165,6 @@ function getBalance() {
 /**
  * Get the number of shares owned
  */
-
 function getShares() {
     return shares;
 }
@@ -173,7 +172,6 @@ function getShares() {
 /**
  * Get the total profit
  */
-
 function getTotalProfit() {
     return totalProfit;
 }
