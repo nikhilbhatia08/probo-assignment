@@ -71,15 +71,17 @@ function startBot(Symbol) {
     if(!botActive) {
         botActive = true; 
         log.Info(process.env.API_KEY);
-        setInterval(() => {
+        const Interval = setInterval(() => {
             finnhubClient.quote('AAPL', (error, data, response) => {
-                
                 if (error) {
                     log.Info(error);
                 }
                 else meanReversionStrategy(data);
                 log.Info(data);
                 console.log(response);
+                if(!botActive) {
+                    clearInterval(Interval);
+                }
             });
         }, 5000);
     }
